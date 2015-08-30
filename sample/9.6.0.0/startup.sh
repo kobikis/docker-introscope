@@ -14,6 +14,10 @@ cp IntroscopeEPAgent-orig.properties /opt/introscope-epagent/epagent/IntroscopeE
 sed -i s/localhost/${EM_PORT_5001_TCP_ADDR}/g /opt/introscope-epagent/epagent/IntroscopeEPAgent.properties
 sed -i s/5001/${EM_PORT_5001_TCP_PORT}/g /opt/introscope-epagent/epagent/IntroscopeEPAgent.properties
 
+cd /root/xap/bin
+./gs-agent.sh &
+./gs-webui.sh &
+
 # now we correctly set everything and startup the epagent
 cd /opt/introscope-epagent/epagent
 java -cp lib/EPAgent.jar:lib/IntroscopeServices.jar:lib/Agent.jar:epaplugins/epaMQMonitor/epaMQMonitor.jar:epaplugins/epaMQMonitor:epaplugins/epaMQMonitor/lib/com.ibm.mq.pcf.jar:epaplugins/epaMQMonitor/lib/com.ibm.mq.jar:epaplugins/epaMQMonitor/lib/connector.jar:epaplugins/epaMQMonitor/lib/com.ibm.mqjms.jar com.wily.introscope.api.IntroscopeEPAgent

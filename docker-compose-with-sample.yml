@@ -30,7 +30,24 @@ webview:
   ports:
     - "8080:8080"
 
-sample:
+sample1:
+  hostname: xap1
   build: sample/9.6.0.0
   links:
     - em:em
+  ports:
+    - "8099:8099" 
+  volumes:
+    - /home/kobi/opt/xap/10.2.0/gigaspaces-xap-premium-10.2.0-ga:/root/xap
+  environment:
+    - LOOKUPGROUPS=kobi
+
+sample2:
+  hostname: xap2
+  build: sample/9.6.0.0
+  links:
+    - em:em
+  volumes:
+    - /home/kobi/opt/xap/10.2.0/gigaspaces-xap-premium-10.2.0-ga:/root/xap
+  environment:
+    - LOOKUPGROUPS=kobi
