@@ -1,5 +1,6 @@
 # Docker for CA Wily Introscope based on https://github.com/stefansiegl/docker-introscope.git.
-Added configuration for running XAP inside sample container
+Added configuration for running XAP inside sample container.
+Configure your XAP home and your lookupgroup inside docker-compose-with-sample.yml
 
 This project hosts docker (https://www.docker.com/) images build for the APM solution of Computer Asscociates (CA APM).
 
