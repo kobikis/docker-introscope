@@ -38,9 +38,9 @@ sample1:
   ports:
     - "8099:8099" 
   volumes:
-    - /home/kobi/opt/xap/10.2.0/gigaspaces-xap-premium-10.2.0-ga:/root/xap
+    - <XAP_HOME>:/root/xap
   environment:
-    - LOOKUPGROUPS=kobi
+    - LOOKUPGROUPS=myGroup
 
 sample2:
   hostname: xap2
@@ -48,6 +48,6 @@ sample2:
   links:
     - em:em
   volumes:
-    - /home/kobi/opt/xap/10.2.0/gigaspaces-xap-premium-10.2.0-ga:/root/xap
+    - <XAP_HOME>:/root/xap
   environment:
-    - LOOKUPGROUPS=kobi
+    - LOOKUPGROUPS=myGroup
